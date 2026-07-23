@@ -13,10 +13,11 @@ export const metadata: Metadata = {
     "Rykards partners with ambitious teams to design, build, and scale software products, AI systems, and cloud platforms. Senior engineering, clear thinking, and delivery built around outcomes.",
   icons: {
     icon: [
-      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
     ],
-    shortcut: "/favicon-32.png",
+    shortcut: "/favicon-48.png",
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
