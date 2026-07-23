@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="342" height="209" viewBox="0 0 342 209" role="img" aria-labelledby="title desc">
+  <title id="title">Rykards</title>
+  <desc id="desc">Rykards wordmark with a woven geometric symbol.</desc>
+  <g fill="#052b27">
+    <text x="25" y="120" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700" letter-spacing="-1.4">Rykards</text>
+  </g>
+  <g transform="translate(249 61)" fill="#fff" stroke="#073b34" stroke-width="3" stroke-linejoin="miter">
+    <path d="M11 1 78 68 68 78 1 11Z"/>
+    <path d="M1 21 58 78 48 88 1 41 11 31Z"/>
+    <path d="m58 11 10 10-57 57L1 68Z"/>
+    <path d="m78 11 10 10-67 67-10-10Z"/>
+  </g>
+</svg>

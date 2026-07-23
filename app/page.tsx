@@ -36,7 +36,7 @@ const projectFeatures = [
 ];
 
 function Brand() {
-  return <><span className="brand-mark" aria-hidden="true"><Image src="/rykards-logo.png" alt="" width={70} height={70} priority /></span><span>RYKARDS</span></>;
+  return <Image className="brand-logo" src="/rykards-logo-horizontal.png" alt="Rykards" width={144} height={44} priority />;
 }
 
 export default function Home() {
