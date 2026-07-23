@@ -43,20 +43,20 @@ export default function Home() {
   return <main>
     <nav className="nav shell" aria-label="Main navigation">
       <a className="brand" href="#top" aria-label="Rykards home"><Brand /></a>
-      <div className="nav-links"><a href="#services">Expertise</a><a href="#approach">Approach</a><a href="#about">About</a></div>
+      <div className="nav-links"><a href="#expertise">Expertise</a><a href="#approach">Approach</a><a href="#about">About</a></div>
       <a className="button button-small" href="#contact">Start a project <span aria-hidden="true">&#8599;</span></a>
     </nav>
 
     <section className="hero shell" id="top">
       <div className="eyebrow"><span /> Independent software engineering company</div>
       <h1><span className="hero-line">We engineer</span><br /><span className="hero-line">what&apos;s <em>next.</em></span></h1>
-      <div className="hero-lower"><p>Rykards partners with ambitious teams to design, build, and scale software that creates a real advantage.</p><a className="circle-link" href="#services" aria-label="Explore our expertise">&darr;</a></div>
+      <div className="hero-lower"><p>Rykards partners with ambitious teams to design, build, and scale software that creates a real advantage.</p><a className="circle-link" href="#expertise" aria-label="Explore our expertise">&darr;</a></div>
       <div className="signal-card" aria-hidden="true"><div className="signal-top"><span>RYK / SYSTEM</span><span>BUILD 01</span></div><div className="signal-orbit"><span>IDEA</span><i /><span>IMPACT</span></div><div className="signal-bars"><i/><i/><i/><i/><i/><i/><i/><i/></div></div>
     </section>
 
     <section className="statement"><div className="shell statement-grid"><p className="section-label">/ Our point of view</p><div><h2>Complex software.<br /><span>Clear thinking.</span></h2><p>Technology should move a business forward, not create another layer of friction. We bring product strategy, design, and deep engineering together so the path from idea to impact stays remarkably clear.</p></div></div></section>
 
-    <section className="services shell" id="services">
+    <section className="services shell" id="expertise">
       <div className="section-head"><p className="section-label">/ What we do</p><h2>Built for the hard parts.</h2></div>
       <div>{services.map((service) => <article className="service" key={service.number}><span className="service-number">{service.number}</span><div><h3>{service.title}</h3><p>{service.copy}</p><ul>{service.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul></div><span className="service-arrow" aria-hidden="true">&#8599;</span></article>)}</div>
     </section>
@@ -67,7 +67,7 @@ export default function Home() {
 
     <section className="principles" id="about"><div className="shell">
       <div className="section-head light"><p className="section-label">/ The Rykards standard</p><h2>Built like it matters.</h2></div>
-      <div className="principle-grid"><article><strong>Senior by default.</strong><p>The people in the room are the people doing the work. Fewer layers, stronger decisions.</p></article><article><strong>Outcomes over output.</strong><p>We measure progress by the value software creates, not the volume of tickets closed.</p></article><article><strong>Quality compounds.</strong><p>Clear architecture, thoughtful interfaces, and maintainable code keep paying dividends.</p></article></div>
+      <div className="principle-grid"><article><h3>Senior by default.</h3><p>The people in the room are the people doing the work. Fewer layers, stronger decisions.</p></article><article><h3>Outcomes over output.</h3><p>We measure progress by the value software creates, not the volume of tickets closed.</p></article><article><h3>Quality compounds.</h3><p>Clear architecture, thoughtful interfaces, and maintainable code keep paying dividends.</p></article></div>
       <div className="principle-stats">
         <div><span className="stat-label">Team model</span><strong>1 <small>TEAM</small></strong><span>Integrated product delivery</span></div>
         <div><span className="stat-label">Delivery rhythm</span><strong>2 <small>WEEK</small></strong><span>Planning and shipping cycles</span></div>
