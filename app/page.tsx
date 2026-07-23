@@ -81,7 +81,7 @@ export default function Home() {
       <div className="featured-cta"><p>Have an operation ready for better software?</p><a className="button button-small" href="#contact">Ready to start? <span aria-hidden="true">&#8599;</span></a></div>
     </section>
 
-    <section className="contact shell" id="contact"><p className="section-label">/ Have something ambitious in mind?</p><h2>Let&apos;s build the<br /><em>right thing.</em></h2><div className="contact-row"><p>Tell us where you want to go. We&apos;ll bring a clear perspective on how software can get you there.</p><a className="button button-large" href="mailto:hello@rykards.com?subject=Project%20enquiry">hello@rykards.com <span aria-hidden="true">&#8599;</span></a></div></section>
+    <section className="contact shell" id="contact"><p className="section-label">/ Have something ambitious in mind?</p><h2>Let&apos;s build the<br /><em>right thing.</em></h2><div className="contact-row"><p>Tell us where you want to go. We&apos;ll bring a clear perspective on how software can get you there.</p><a className="button button-large" href="mailto:contact@rykards.com?subject=Project%20enquiry">contact@rykards.com <span aria-hidden="true">&#8599;</span></a></div></section>
 
     <footer className="footer shell"><a className="brand" href="#top" aria-label="Rykards home"><Brand /></a><p>Software engineering for what&apos;s next.</p><p>&copy; 2026 Rykards</p></footer>
   </main>;
