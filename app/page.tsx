@@ -36,7 +36,7 @@ const projectFeatures = [
 ];
 
 function Brand() {
-  return <Image className="brand-logo" src="/rykards-logo-horizontal.png" alt="Rykards" width={144} height={44} priority />;
+  return <Image className="brand-logo" src="/rykards-logo-horizontal-light.svg" alt="Rykards" width={144} height={44} priority unoptimized />;
 }
 
 export default function Home() {
@@ -77,11 +77,13 @@ export default function Home() {
 
     <section className="featured shell" id="featured">
       <div className="featured-top"><p className="section-label">/ Currently building</p><span className="launch-tag"><i /> Launching Q3 2026</span></div>
-      <div className="featured-grid"><div><p className="project-type">Member &amp; operations platform</p><h2>The operating system for a private golf club.</h2></div><div className="featured-details"><p>A single platform bringing the member experience and day-to-day club operations into one clear system.</p><ul>{projectFeatures.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul></div></div>
-      <div className="featured-cta"><p>Have an operation ready for better software?</p><a className="button button-small" href="#contact">Ready to start? <span aria-hidden="true">&#8599;</span></a></div>
+      <div className="feature-light-card">
+        <div className="featured-grid"><div><p className="project-type">Member &amp; operations platform</p><h2>The operating system for a private golf club.</h2></div><div className="featured-details"><p>A single platform bringing the member experience and day-to-day club operations into one clear system.</p><ul>{projectFeatures.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul></div></div>
+        <div className="featured-cta"><p>Have an operation ready for better software?</p><a className="button button-small button-oncard" href="#contact">Ready to start? <span aria-hidden="true">&#8599;</span></a></div>
+      </div>
     </section>
 
-    <section className="contact shell" id="contact"><p className="section-label">/ Have something ambitious in mind?</p><h2>Let&apos;s build the<br /><em>right thing.</em></h2><div className="contact-row"><p>Tell us where you want to go. We&apos;ll bring a clear perspective on how software can get you there.</p><a className="button button-large" href="mailto:contact@rykards.com?subject=Project%20enquiry">contact@rykards.com <span aria-hidden="true">&#8599;</span></a></div></section>
+    <section className="contact shell" id="contact"><p className="section-label">/ Have something ambitious in mind?</p><h2>Let&apos;s build the<br /><em>right thing.</em></h2><div className="cta-card"><p>Tell us where you want to go. We&apos;ll bring a clear perspective on how software can get you there.</p><a className="button button-large button-oncard" href="mailto:contact@rykards.com?subject=Project%20enquiry">contact@rykards.com <span aria-hidden="true">&#8599;</span></a></div></section>
 
     <footer className="footer shell"><a className="brand" href="#top" aria-label="Rykards home"><Brand /></a><p>Software engineering for what&apos;s next.</p><p>&copy; 2026 Rykards</p></footer>
   </main>;
