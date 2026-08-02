@@ -18,6 +18,9 @@ next-env.d.ts
 # Vercel
 .vercel
 
+# Local dev tooling
+/.claude/
+
 # Legacy build and generated packaging
 /dist/
 /.vinext/
