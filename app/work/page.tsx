@@ -28,7 +28,7 @@ const caseStudies: CaseStudy[] = [
     problem: "Wholesalers were tracking stock and dispatch across paper registers, spreadsheets, and phone calls, which made it hard to know what was available and what had shipped.",
     solution: "We built a single system for managing inventory and dispatch, now running day to day across five local wholesale businesses.",
     features: ["Inventory tracking", "Dispatch management", "Multi-business use"],
-    stack: [],
+    stack: ["Next.js", "Django", "PostgreSQL", "VPS hosting"],
     outcome: "In daily use by five businesses.",
   },
   {
