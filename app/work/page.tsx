@@ -23,13 +23,13 @@ const caseStudies: CaseStudy[] = [
   {
     status: "In production",
     type: "Inventory & dispatch system",
-    title: "Wholesale operations, out of the ledger and into one system.",
+    title: "Wholesale trading, from purchase to payment, in one system.",
     client: "5 wholesale businesses",
-    problem: "Wholesalers were tracking stock and dispatch across paper registers, spreadsheets, and phone calls, which made it hard to know what was available and what had shipped.",
-    solution: "We built a single system for managing inventory and dispatch, now running day to day across five local wholesale businesses.",
-    features: ["Inventory tracking", "Dispatch management", "Multi-business use"],
+    problem: "Wholesalers were juggling sales, purchases, stock, dispatches, and client credit across separate registers and spreadsheets, so nobody had a clear view of what was owed, what was in stock, or what had shipped.",
+    solution: "We built a complete operations and accounting system covering the full trading cycle: purchases and sales orders, inventory, dispatch, invoicing, payments, and returns. A live dashboard shows receivables, payables, stock exceptions, and fulfilment workload at a glance, and every business event is recorded in an audit trail.",
+    features: ["Sales & purchase orders", "Inventory & stock alerts", "Dispatch tracking", "Invoices & payments", "Returns & corrections", "Client statements & aging", "Financial reporting", "Staff roles & audit trail"],
     stack: ["Next.js", "Django", "PostgreSQL", "VPS hosting"],
-    outcome: "In daily use by five businesses.",
+    outcome: "In daily use by five wholesale businesses, giving owners a real-time view of cash, credit exposure, and stock.",
   },
   {
     status: "Launching Q4 2026",
