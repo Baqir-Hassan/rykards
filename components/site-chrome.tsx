@@ -5,7 +5,7 @@ export const contactEmail = "contact@rykards.com";
 export const legalName = "RYKARDS (PVT) LTD";
 
 function Brand() {
-  return <Image className="brand-logo" src="/rykards-logo-horizontal.png" alt="Rykards" width={144} height={44} priority />;
+  return <><Image className="brand-mark" src="/rykards-mark.png" alt="" width={44} height={44} priority /><span className="brand-name">Rykards</span></>;
 }
 
 export function SiteNav() {
