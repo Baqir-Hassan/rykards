@@ -30,11 +30,15 @@ const process = [
 ];
 
 const projectFeatures = [
-  "Tee-time booking",
-  "Member management",
-  "Staff scheduling",
-  "Integrated payments",
+  "Sales & purchase orders",
+  "Inventory & dispatch",
+  "Invoices & payments",
+  "Client credit & aging",
 ];
+
+const capabilities = ["Strategy", "Design", "Engineering", "AI", "Cloud"];
+// Each half of the marquee must be wider than the screen, so the -50% loop never shows a gap.
+const marqueeItems = [...capabilities, ...capabilities, ...capabilities];
 
 
 export default function Home() {
@@ -55,7 +59,7 @@ export default function Home() {
       <div>{services.map((service) => <article className="service" key={service.number}><span className="service-number">{service.number}</span><div><h3>{service.title}</h3><p>{service.copy}</p><ul>{service.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul></div></article>)}</div>
     </section>
 
-    <section className="marquee" aria-label="Rykards capabilities"><div>STRATEGY <span>&#9670;</span> DESIGN <span>&#9670;</span> ENGINEERING <span>&#9670;</span> AI <span>&#9670;</span> CLOUD <span>&#9670;</span> STRATEGY <span>&#9670;</span> DESIGN <span>&#9670;</span></div></section>
+    <section className="marquee" aria-label="Rykards capabilities"><div>{[0, 1].map((copy) => <p key={copy} aria-hidden={copy === 1 || undefined}>{marqueeItems.map((item, i) => <span key={i}>{item.toUpperCase()}<b>&#9670;</b></span>)}</p>)}</div></section>
 
     <section className="approach shell" id="approach"><div className="approach-intro"><p className="section-label">/ How we work</p><h2>Momentum,<br /><em>without chaos.</em></h2><p>Small senior teams. Short feedback loops. Direct communication. Every engagement is designed to make progress visible and decisions easier.</p></div><div className="process-list">{process.map(([num,title,copy]) => <article key={num}><span>{num}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
 
@@ -70,8 +74,8 @@ export default function Home() {
     </div></section>
 
     <section className="featured shell" id="featured">
-      <div className="featured-top"><p className="section-label">/ Currently building</p><span className="launch-tag"><i /> Launching Q4 2026</span></div>
-      <div className="featured-grid"><div><p className="project-type">Member &amp; operations platform</p><h2>The operating system for a private golf club.</h2></div><div className="featured-details"><p>A single platform bringing the member experience and day-to-day club operations into one clear system.</p><ul>{projectFeatures.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul></div></div>
+      <div className="featured-top"><p className="section-label">/ Featured work</p><span className="launch-tag"><i /> In production</span></div>
+      <div className="featured-grid"><div><p className="project-type">Inventory &amp; dispatch system</p><h2>Wholesale trading, from purchase to payment, in one system.</h2></div><div className="featured-details"><p>In daily use by five wholesale businesses, giving owners a real-time view of cash, credit exposure, and stock.</p><ul>{projectFeatures.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul></div></div>
       <div className="featured-cta"><p>Have an operation ready for better software?</p><Link className="button button-small" href="/work">See our work <span aria-hidden="true">&#8599;</span></Link></div>
     </section>
 
