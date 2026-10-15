@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/work" },
 };
 
+const workSolutions = [
+  ...solutions.filter((solution) => solution.id === "restaurant"),
+  ...solutions.filter((solution) => solution.id !== "restaurant"),
+];
+
 export default function Work() {
   return <main>
     <SiteNav />
@@ -21,9 +26,9 @@ export default function Work() {
       intro="Explore our existing software, see what each foundation handles, and find out what can be adapted for your business. Deployment status is shown for every product."
     />
 
-    <nav className="shell product-picker" aria-label="Choose a product"><p className="section-label">/ Find your starting point</p><ul>{solutions.map((solution) => <li key={solution.id}><a href={`#${solution.id}`}>{solution.name} <span aria-hidden="true">&darr;</span></a></li>)}</ul><Link className="text-link" href={getEnquiryHref("custom")}>Looking for custom software? <span aria-hidden="true">&#8599;</span></Link></nav>
+    <nav className="shell product-picker" aria-label="Choose a product"><p className="section-label">/ Find your starting point</p><ul>{workSolutions.map((solution) => <li key={solution.id}><a href={`#${solution.id}`}>{solution.name} <span aria-hidden="true">&darr;</span></a></li>)}</ul><Link className="text-link" href={getEnquiryHref("custom")}>Looking for custom software? <span aria-hidden="true">&#8599;</span></Link></nav>
 
-    <section className="shell" aria-label="Software foundations">{solutions.map((solution) => <article className="case" id={solution.id} key={solution.id} tabIndex={-1} aria-labelledby={`${solution.id}-heading`}>
+    <section className="shell" aria-label="Software foundations">{workSolutions.map((solution) => <article className="case" id={solution.id} key={solution.id} tabIndex={-1} aria-labelledby={`${solution.id}-heading`}>
       <div className="featured-top"><p className="section-label">/ {solution.name}</p><span className="launch-tag"><i aria-hidden="true" /> {solution.status}</span></div>
       <div className="featured-grid">
         <div>
