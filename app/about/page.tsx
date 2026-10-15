@@ -18,14 +18,14 @@ const team = [
   },
   {
     name: "Bilal Kamran",
-    image: "/Bilal.jfif",
+    image: "/Bilal.jpg",
     role: "CFO",
     focus: ["Frontend", "UI/UX"],
     bio: "Runs finance and shapes everything users touch, from interface design through to the frontend code that delivers it.",
   },
   {
     name: "Maaz Ahmad",
-    image: "/Maaz.jfif",
+    image: "/Maaz.jpg",
     role: "CTO",
     focus: ["Mobile", "Automation", "Integrations"],
     bio: "Sets technical direction and builds mobile apps, automated workflows, and the integrations that connect products to the tools businesses already use.",
