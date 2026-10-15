@@ -6,6 +6,7 @@ import { PageHero, SiteFooter, SiteNav, legalName } from "@/components/site-chro
 export const metadata: Metadata = {
   title: "About — Rykards",
   description: "Rykards is a software engineering company founded in Pakistan in 2025, led by three hands-on engineers.",
+  alternates: { canonical: "/about" },
 };
 
 const team = [

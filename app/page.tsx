@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteFooter, SiteNav, contactEmail } from "@/components/site-chrome";
 import { solutions } from "@/lib/solutions";
+import { getEnquiryHref } from "@/lib/enquiry";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const services = [
   {
@@ -49,8 +55,15 @@ export default function Home() {
     <section className="hero shell" id="top">
       <div className="eyebrow"><span /> Independent software engineering company</div>
       <h1><span className="hero-line">We engineer</span><br /><span className="hero-line">what&apos;s <em>next.</em></span></h1>
-      <div className="hero-lower"><p>Custom software engineering and adaptable software foundations, built around the way your business works.</p><a className="circle-link" href="#expertise" aria-label="Explore our expertise">&darr;</a></div>
+      <div className="hero-lower"><div className="hero-copy"><p>Custom web and mobile software, plus customizable products for wholesale, cafe and retail, dental, and restaurant operations.</p><div className="hero-actions"><a className="button button-small" href="#solutions">Explore products <span aria-hidden="true">&darr;</span></a><Link className="button button-small button-outline" href={getEnquiryHref("custom")}>Start a project <span aria-hidden="true">&#8599;</span></Link></div></div></div>
       <div className="signal-card" aria-hidden="true"><div className="signal-top"><span>RYK / SYSTEM</span><span>BUILD 01</span></div><div className="signal-orbit"><span>IDEA</span><i /><span>IMPACT</span></div><div className="signal-bars"><i/><i/><i/><i/><i/><i/><i/><i/></div></div>
+    </section>
+
+    <section className="services shell home-solutions" id="solutions">
+      <div className="section-head"><p className="section-label">/ Our software foundations</p><h2>A starting point.<br />Shaped to fit.</h2></div>
+      <p className="solutions-intro">Start with software built for your kind of business. We agree the configuration, custom development, and implementation around your requirements.</p>
+      <dl className="facts solution-directory">{solutions.map((solution) => <div key={solution.id}><dt><Link href={`/work#${solution.id}`}>{solution.name} <span aria-hidden="true">&#8599;</span></Link></dt><dd>{solution.status}</dd></div>)}</dl>
+      <div className="directory-note"><p>Need something different?</p><Link href={getEnquiryHref("custom")}>Discuss a custom build <span aria-hidden="true">&#8599;</span></Link></div>
     </section>
 
     <section className="statement"><div className="shell statement-grid"><p className="section-label">/ Our point of view</p><div><h2>Complex software.<br /><span>Clear thinking.</span></h2><p>Technology should move a business forward, not create another layer of friction. We bring product strategy, design, and deep engineering together so the path from idea to impact stays remarkably clear.</p></div></div></section>
@@ -74,18 +87,13 @@ export default function Home() {
       </div>
     </div></section>
 
-    <section className="services shell" id="solutions">
-      <div className="section-head"><p className="section-label">/ Our software foundations</p><h2>A starting point.<br />Shaped to fit.</h2></div>
-      <dl className="facts">{solutions.map((solution) => <div key={solution.id}><dt><Link href={`/work#${solution.id}`}>{solution.name} <span aria-hidden="true">&#8599;</span></Link></dt><dd>{solution.status}</dd></div>)}</dl>
-    </section>
-
     <section className="featured shell" id="featured">
       <div className="featured-top"><p className="section-label">/ Featured work</p><span className="launch-tag"><i /> In production</span></div>
       <div className="featured-grid"><div><p className="project-type">{solutions[0].name}</p><h2>{solutions[0].title}</h2></div><div className="featured-details"><p>{solutions[0].status}. A customizable foundation for connected wholesale operations.</p><ul>{projectFeatures.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul></div></div>
       <div className="featured-cta"><p>Have an operation ready for better software?</p><Link className="button button-small" href="/work#wholesale">Watch the wholesale overview <span aria-hidden="true">&#8599;</span></Link></div>
     </section>
 
-    <section className="contact shell" id="contact"><p className="section-label">/ Have something ambitious in mind?</p><h2>Let&apos;s build the<br /><em>right thing.</em></h2><div className="contact-row"><p>Tell us where you want to go. Within one business day, we&apos;ll bring a clear perspective on how software can get you there.</p><a className="button button-large" href={`mailto:${contactEmail}?subject=Project%20enquiry`}>{contactEmail} <span aria-hidden="true">&#8599;</span></a></div></section>
+    <section className="contact shell" id="contact"><p className="section-label">/ Have something ambitious in mind?</p><h2>Let&apos;s build the<br /><em>right thing.</em></h2><div className="contact-row"><p>Tell us where you want to go. We&apos;ll reply within one business day. Prefer email? <a className="text-link" href={`mailto:${contactEmail}`}>{contactEmail}</a></p><Link className="button button-large" href="/contact#enquiry">Tell us what you need <span aria-hidden="true">&#8599;</span></Link></div></section>
 
     <SiteFooter />
   </main>;

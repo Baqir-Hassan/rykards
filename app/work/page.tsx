@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero, SiteFooter, SiteNav } from "@/components/site-chrome";
 import { solutions } from "@/lib/solutions";
+import { getEnquiryHref } from "@/lib/enquiry";
 import { WholesaleVideo } from "@/components/wholesale-video";
 import { RestaurantVideo } from "@/components/restaurant-video";
 
 export const metadata: Metadata = {
   title: "Work — Rykards",
   description: "Explore Rykards' customizable software foundations for wholesale, cafe and retail, dental, restaurant, and golf club operations, with clear deployment status and custom engineering services.",
+  alternates: { canonical: "/work" },
 };
 
 const workSolutions = [
@@ -21,24 +23,25 @@ export default function Work() {
     <PageHero
       label="/ Work & solutions"
       title={<>Software that<br /><em>runs the business.</em></>}
-      intro="Start with a customizable Rykards software foundation, or work with us on a custom build. We shape workflows, interfaces, reports, and integrations around your operation. Each solution's current deployment status is shown below."
+      intro="Explore our existing software, see what each foundation handles, and find out what can be adapted for your business. Deployment status is shown for every product."
     />
+
+    <nav className="shell product-picker" aria-label="Choose a product"><p className="section-label">/ Find your starting point</p><ul>{workSolutions.map((solution) => <li key={solution.id}><a href={`#${solution.id}`}>{solution.name} <span aria-hidden="true">&darr;</span></a></li>)}</ul><Link className="text-link" href={getEnquiryHref("custom")}>Looking for custom software? <span aria-hidden="true">&#8599;</span></Link></nav>
 
     <section className="shell" aria-label="Software foundations">{workSolutions.map((solution) => <article className="case" id={solution.id} key={solution.id} tabIndex={-1} aria-labelledby={`${solution.id}-heading`}>
       <div className="featured-top"><p className="section-label">/ {solution.name}</p><span className="launch-tag"><i aria-hidden="true" /> {solution.status}</span></div>
       <div className="featured-grid">
         <div>
           <h2 id={`${solution.id}-heading`}>{solution.title}</h2>
-          <dl className="case-body">
-            <div><dt>The operational need</dt><dd>{solution.need}</dd></div>
-            <div><dt>The foundation</dt><dd>{solution.foundation}</dd></div>
-            <div><dt>Deployment status</dt><dd>{solution.deployment}</dd></div>
-          </dl>
+          <p className="case-audience">{solution.audience}</p>
+          <p className="case-summary">{solution.foundation}</p>
+          {solution.capabilities.length > 0 && <div className="case-capabilities"><h3 className="section-label">/ In the foundation</h3><ul>{solution.capabilities.map((capability) => <li key={capability}><span aria-hidden="true">+</span>{capability}</li>)}</ul></div>}
         </div>
         <div className="featured-details">
-          <p className="section-label">/ Customization options</p>
+          <h3 className="section-label">/ Scoped for your business</h3>
           <ul>{solution.tailoring.map((option) => <li key={option}><span aria-hidden="true">+</span>{option}</li>)}</ul>
-          <p>We agree customization scope around your requirements.</p>
+          <p className="scope-note">{solution.scopeNote}</p>
+          <Link className="button button-small product-enquiry" href={getEnquiryHref(solution.id)}>{solution.cta} <span aria-hidden="true">&#8599;</span></Link>
         </div>
       </div>
       {solution.id === "wholesale" && <WholesaleVideo />}
@@ -47,7 +50,7 @@ export default function Work() {
 
     <section className="statement"><div className="shell statement-grid"><p className="section-label">/ Custom engineering</p><div><h2>Your workflow.<br /><span>Our engineering.</span></h2><p>Use an existing foundation where it fits, extend it where your operation needs more, or commission a custom system. We can design and build web and mobile software, connect your tools, and automate business processes. We agree the scope around your requirements.</p></div></div></section>
 
-    <section className="page-cta shell"><h2>Let&apos;s shape the right software for your operation.</h2><Link className="button button-small" href="/contact">Discuss your requirements <span aria-hidden="true">&#8599;</span></Link></section>
+    <section className="page-cta shell"><h2>Let&apos;s shape the right software for your operation.</h2><Link className="button button-small" href={getEnquiryHref("custom")}>Discuss your requirements <span aria-hidden="true">&#8599;</span></Link></section>
     <SiteFooter />
   </main>;
 }
