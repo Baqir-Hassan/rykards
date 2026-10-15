@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero, SiteFooter, SiteNav } from "@/components/site-chrome";
 import { solutions } from "@/lib/solutions";
+import { WholesaleVideo } from "@/components/wholesale-video";
 
 export const metadata: Metadata = {
   title: "Work — Rykards",
@@ -34,6 +35,7 @@ export default function Work() {
           <p>We agree customization scope around your requirements.</p>
         </div>
       </div>
+      {solution.id === "wholesale" && <WholesaleVideo />}
     </article>)}</section>
 
     <section className="statement"><div className="shell statement-grid"><p className="section-label">/ Custom engineering</p><div><h2>Your workflow.<br /><span>Our engineering.</span></h2><p>Use an existing foundation where it fits, extend it where your operation needs more, or commission a custom system. We can design and build web and mobile software, connect your tools, and automate business processes. We agree the scope around your requirements.</p></div></div></section>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SiteFooter, SiteNav, contactEmail } from "@/components/site-chrome";
 import { solutions } from "@/lib/solutions";
+import { WholesaleVideo } from "@/components/wholesale-video";
 
 const services = [
   {
@@ -82,6 +83,7 @@ export default function Home() {
     <section className="featured shell" id="featured">
       <div className="featured-top"><p className="section-label">/ Featured work</p><span className="launch-tag"><i /> In production</span></div>
       <div className="featured-grid"><div><p className="project-type">{solutions[0].name}</p><h2>{solutions[0].title}</h2></div><div className="featured-details"><p>{solutions[0].status}. A customizable foundation for connected wholesale operations.</p><ul>{projectFeatures.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul></div></div>
+      <WholesaleVideo />
       <div className="featured-cta"><p>Have an operation ready for better software?</p><Link className="button button-small" href="/work">See our work <span aria-hidden="true">&#8599;</span></Link></div>
     </section>
 
