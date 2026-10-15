@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: "Rykards \u2014 Independent Software Engineering Company",
   description:
-    "Rykards partners with ambitious teams to design, build, and scale software products, AI systems, and cloud platforms. Senior engineering, clear thinking, and delivery built around outcomes.",
+    "Rykards builds custom software and customizable foundations for wholesale, cafe and retail, dental, restaurant, and golf club operations. Engineering shaped around your business.",
   icons: {
     icon: [
       { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rykards \u2014 Independent Software Engineering Company",
     description:
-      "Rykards designs, builds, and scales software products, AI systems, and cloud platforms for ambitious teams.",
+      "Custom software engineering and customizable operational software foundations, shaped around your business.",
     type: "website",
     siteName: "Rykards",
   },
   twitter: {
     card: "summary",
     title: "Rykards \u2014 Independent Software Engineering Company",
-    description: "Independent software engineering for ambitious teams.",
+    description: "Custom software engineering and adaptable software foundations for your business.",
   },
 };
 

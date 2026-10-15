@@ -1,24 +1,25 @@
 import Link from "next/link";
 import { SiteFooter, SiteNav, contactEmail } from "@/components/site-chrome";
+import { solutions } from "@/lib/solutions";
 
 const services = [
   {
     number: "01",
-    title: "Product engineering",
-    copy: "From first commit to production scale, we design and build web and mobile products that feel considered at every layer.",
+    title: "Custom software engineering",
+    copy: "We design and build web and mobile software around your business requirements, from a focused internal tool to a complete operational platform.",
     tags: ["Web platforms", "Mobile apps", "SaaS products"],
   },
   {
     number: "02",
-    title: "AI & automation",
-    copy: "We turn useful AI into dependable product features and workflows, with the guardrails, evaluation, and observability they need.",
-    tags: ["AI agents", "RAG systems", "Workflow automation"],
+    title: "Customizable software foundations",
+    copy: "Start with a Rykards foundation for wholesale, cafe and retail, dental, restaurant, or golf club operations. We scope the adaptations and implementation around your workflows.",
+    tags: ["Operational software", "Workflow customization", "Implementation"],
   },
   {
     number: "03",
-    title: "Cloud & platforms",
-    copy: "Secure, resilient infrastructure that keeps delivery fast as your users, data, and engineering organisation grow.",
-    tags: ["Cloud architecture", "DevOps", "Modernisation"],
+    title: "Integrations & automation",
+    copy: "Connect the tools your business relies on, automate repetitive processes, and extend existing software as your requirements evolve.",
+    tags: ["System integrations", "Workflow automation", "Platform engineering"],
   },
 ];
 
@@ -48,7 +49,7 @@ export default function Home() {
     <section className="hero shell" id="top">
       <div className="eyebrow"><span /> Independent software engineering company</div>
       <h1><span className="hero-line">We engineer</span><br /><span className="hero-line">what&apos;s <em>next.</em></span></h1>
-      <div className="hero-lower"><p>Rykards partners with ambitious teams to design, build, and scale software that creates a real advantage.</p><a className="circle-link" href="#expertise" aria-label="Explore our expertise">&darr;</a></div>
+      <div className="hero-lower"><p>Custom software engineering and adaptable software foundations, built around the way your business works.</p><a className="circle-link" href="#expertise" aria-label="Explore our expertise">&darr;</a></div>
       <div className="signal-card" aria-hidden="true"><div className="signal-top"><span>RYK / SYSTEM</span><span>BUILD 01</span></div><div className="signal-orbit"><span>IDEA</span><i /><span>IMPACT</span></div><div className="signal-bars"><i/><i/><i/><i/><i/><i/><i/><i/></div></div>
     </section>
 
@@ -73,10 +74,15 @@ export default function Home() {
       </div>
     </div></section>
 
+    <section className="services shell" id="solutions">
+      <div className="section-head"><p className="section-label">/ Our software foundations</p><h2>A starting point.<br />Shaped to fit.</h2></div>
+      <dl className="facts">{solutions.map((solution) => <div key={solution.id}><dt><Link href={`/work#${solution.id}`}>{solution.name} <span aria-hidden="true">&#8599;</span></Link></dt><dd>{solution.status}</dd></div>)}</dl>
+    </section>
+
     <section className="featured shell" id="featured">
       <div className="featured-top"><p className="section-label">/ Featured work</p><span className="launch-tag"><i /> In production</span></div>
-      <div className="featured-grid"><div><p className="project-type">Inventory &amp; dispatch system</p><h2>Wholesale trading, from purchase to payment, in one system.</h2></div><div className="featured-details"><p>In daily use by five wholesale businesses, giving owners a real-time view of cash, credit exposure, and stock.</p><ul>{projectFeatures.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul></div></div>
-      <div className="featured-cta"><p>Have an operation ready for better software?</p><Link className="button button-small" href="/work">See our work <span aria-hidden="true">&#8599;</span></Link></div>
+      <div className="featured-grid"><div><p className="project-type">{solutions[0].name}</p><h2>{solutions[0].title}</h2></div><div className="featured-details"><p>{solutions[0].status}. A customizable foundation for connected wholesale operations.</p><ul>{projectFeatures.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul></div></div>
+      <div className="featured-cta"><p>Have an operation ready for better software?</p><Link className="button button-small" href="/work#wholesale">Watch the wholesale overview <span aria-hidden="true">&#8599;</span></Link></div>
     </section>
 
     <section className="contact shell" id="contact"><p className="section-label">/ Have something ambitious in mind?</p><h2>Let&apos;s build the<br /><em>right thing.</em></h2><div className="contact-row"><p>Tell us where you want to go. Within one business day, we&apos;ll bring a clear perspective on how software can get you there.</p><a className="button button-large" href={`mailto:${contactEmail}?subject=Project%20enquiry`}>{contactEmail} <span aria-hidden="true">&#8599;</span></a></div></section>
