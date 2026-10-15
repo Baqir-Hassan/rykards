@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Rykards",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Rykards \u2014 Independent Software Engineering Company",
     description: "Custom software engineering and adaptable software foundations for your business.",
   },
