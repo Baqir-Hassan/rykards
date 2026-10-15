@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { SiteFooter, SiteNav, contactEmail } from "@/components/site-chrome";
 import { solutions } from "@/lib/solutions";
-import { WholesaleVideo } from "@/components/wholesale-video";
 
 const services = [
   {
@@ -83,8 +82,7 @@ export default function Home() {
     <section className="featured shell" id="featured">
       <div className="featured-top"><p className="section-label">/ Featured work</p><span className="launch-tag"><i /> In production</span></div>
       <div className="featured-grid"><div><p className="project-type">{solutions[0].name}</p><h2>{solutions[0].title}</h2></div><div className="featured-details"><p>{solutions[0].status}. A customizable foundation for connected wholesale operations.</p><ul>{projectFeatures.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul></div></div>
-      <WholesaleVideo />
-      <div className="featured-cta"><p>Have an operation ready for better software?</p><Link className="button button-small" href="/work">See our work <span aria-hidden="true">&#8599;</span></Link></div>
+      <div className="featured-cta"><p>Have an operation ready for better software?</p><Link className="button button-small" href="/work#wholesale">Watch the wholesale overview <span aria-hidden="true">&#8599;</span></Link></div>
     </section>
 
     <section className="contact shell" id="contact"><p className="section-label">/ Have something ambitious in mind?</p><h2>Let&apos;s build the<br /><em>right thing.</em></h2><div className="contact-row"><p>Tell us where you want to go. Within one business day, we&apos;ll bring a clear perspective on how software can get you there.</p><a className="button button-large" href={`mailto:${contactEmail}?subject=Project%20enquiry`}>{contactEmail} <span aria-hidden="true">&#8599;</span></a></div></section>

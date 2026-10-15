@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   description: "Explore Rykards' customizable software foundations for wholesale, cafe and retail, dental, restaurant, and golf club operations, with clear deployment status and custom engineering services.",
 };
 
+const workSolutions = [
+  ...solutions.filter((solution) => solution.id === "restaurant"),
+  ...solutions.filter((solution) => solution.id !== "restaurant"),
+];
+
 export default function Work() {
   return <main>
     <SiteNav />
@@ -19,11 +24,11 @@ export default function Work() {
       intro="Start with a customizable Rykards software foundation, or work with us on a custom build. We shape workflows, interfaces, reports, and integrations around your operation. Each solution's current deployment status is shown below."
     />
 
-    <section className="shell" aria-label="Software foundations">{solutions.map((solution) => <article className="case" id={solution.id} key={solution.id}>
+    <section className="shell" aria-label="Software foundations">{workSolutions.map((solution) => <article className="case" id={solution.id} key={solution.id} tabIndex={-1} aria-labelledby={`${solution.id}-heading`}>
       <div className="featured-top"><p className="section-label">/ {solution.name}</p><span className="launch-tag"><i aria-hidden="true" /> {solution.status}</span></div>
       <div className="featured-grid">
         <div>
-          <h2>{solution.title}</h2>
+          <h2 id={`${solution.id}-heading`}>{solution.title}</h2>
           <dl className="case-body">
             <div><dt>The operational need</dt><dd>{solution.need}</dd></div>
             <div><dt>The foundation</dt><dd>{solution.foundation}</dd></div>
