@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PageHero, SiteFooter, SiteNav, legalName } from "@/components/site-chrome";
 
@@ -10,27 +11,26 @@ export const metadata: Metadata = {
 const team = [
   {
     name: "Baqir Hassan",
+    image: "/Baqir.png",
     role: "CEO",
     focus: ["Backend", "DevOps"],
     bio: "Leads the company and owns the systems underneath every product: APIs, data, infrastructure, and the pipelines that ship them.",
   },
   {
     name: "Bilal Kamran",
+    image: "/Bilal.jfif",
     role: "CFO",
     focus: ["Frontend", "UI/UX"],
     bio: "Runs finance and shapes everything users touch, from interface design through to the frontend code that delivers it.",
   },
   {
     name: "Maaz Ahmad",
+    image: "/Maaz.jfif",
     role: "CTO",
     focus: ["Mobile", "Automation", "Integrations"],
     bio: "Sets technical direction and builds mobile apps, automated workflows, and the integrations that connect products to the tools businesses already use.",
   },
 ];
-
-function initials(name: string) {
-  return name.split(" ").map((part) => part[0]).join("");
-}
 
 export default function About() {
   return <main>
@@ -44,7 +44,7 @@ export default function About() {
     <section className="team shell" aria-labelledby="team-heading">
       <div className="section-head"><p className="section-label">/ Leadership</p><h2 id="team-heading">Three leads. No layers.</h2></div>
       <div className="team-grid">{team.map((person) => <article key={person.name}>
-        <div className="avatar" aria-hidden="true">{initials(person.name)}</div>
+        <Image className="avatar" src={person.image} alt={`Portrait of ${person.name}`} width={96} height={96} sizes="96px" />
         <p className="project-type">{person.role}</p>
         <h3>{person.name}</h3>
         <p>{person.bio}</p>
