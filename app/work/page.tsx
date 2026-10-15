@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero, SiteFooter, SiteNav } from "@/components/site-chrome";
 import { solutions } from "@/lib/solutions";
 import { WholesaleVideo } from "@/components/wholesale-video";
+import { RestaurantVideo } from "@/components/restaurant-video";
 
 export const metadata: Metadata = {
   title: "Work — Rykards",
@@ -36,6 +37,7 @@ export default function Work() {
         </div>
       </div>
       {solution.id === "wholesale" && <WholesaleVideo />}
+      {solution.id === "restaurant" && <RestaurantVideo />}
     </article>)}</section>
 
     <section className="statement"><div className="shell statement-grid"><p className="section-label">/ Custom engineering</p><div><h2>Your workflow.<br /><span>Our engineering.</span></h2><p>Use an existing foundation where it fits, extend it where your operation needs more, or commission a custom system. We can design and build web and mobile software, connect your tools, and automate business processes. We agree the scope around your requirements.</p></div></div></section>
