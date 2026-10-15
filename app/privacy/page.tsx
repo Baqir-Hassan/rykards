@@ -4,9 +4,10 @@ import { SiteFooter, SiteNav, contactEmail, legalName } from "@/components/site-
 export const metadata: Metadata = {
   title: "Privacy Policy — Rykards",
   description: "How Rykards collects, uses, and protects personal information.",
+  alternates: { canonical: "/privacy" },
 };
 
-const lastUpdated = "3 October 2026";
+const lastUpdated = "16 October 2026";
 
 export default function Privacy() {
   return <main>
@@ -20,7 +21,7 @@ export default function Privacy() {
 
       <h2>Information we collect</h2>
       <ul>
-        <li><strong>Information you send us.</strong> When you email us, we receive your name, email address, and anything you choose to include in your message.</li>
+        <li><strong>Information you send us.</strong> When you use our enquiry form or email us, we receive your name, email address, business name if provided, product or service interest, and anything you choose to include in your message. Please do not include passwords, patient records, or other sensitive information.</li>
         <li><strong>Technical information.</strong> Our hosting provider, Vercel, automatically processes standard request data such as IP address, browser type, and pages requested in order to deliver and secure the website.</li>
       </ul>
       <p>We do not currently use analytics or advertising cookies. If we introduce analytics, we will update this policy before doing so and, where required, ask for your consent.</p>
@@ -34,7 +35,7 @@ export default function Privacy() {
       <p>We do not sell your personal information, and we do not use it for third-party advertising.</p>
 
       <h2>Sharing</h2>
-      <p>We share information only with service providers that help us run our business, such as our website host and email provider, and only as needed for them to provide that service. We may also disclose information where required by law.</p>
+      <p>We share information only with service providers that help us run our business, such as our website host and email provider, and only as needed for them to provide that service. Enquiries submitted through the form are processed by Resend for email delivery to our team. We may also disclose information where required by law.</p>
 
       <h2>International transfers</h2>
       <p>Our service providers may process information in countries other than your own. Where this happens, we rely on providers that apply appropriate safeguards to protect it.</p>
