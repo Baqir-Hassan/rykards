@@ -1,87 +1,44 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero, SiteFooter, SiteNav } from "@/components/site-chrome";
+import { solutions } from "@/lib/solutions";
 
 export const metadata: Metadata = {
   title: "Work — Rykards",
-  description: "Selected Rykards projects: a member and operations platform for a private golf club, and an inventory and dispatch system used by five wholesale businesses.",
+  description: "Explore Rykards' customizable software foundations for wholesale, cafe and retail, dental, restaurant, and golf club operations, with clear deployment status and custom engineering services.",
 };
-
-type CaseStudy = {
-  status: string;
-  type: string;
-  title: string;
-  client: string;
-  problem: string;
-  solution: string;
-  features: string[];
-  stack: string[];
-  outcome: string;
-};
-
-const caseStudies: CaseStudy[] = [
-  {
-    status: "In production",
-    type: "Inventory & dispatch system",
-    title: "Wholesale trading, from purchase to payment, in one system.",
-    client: "5 wholesale businesses",
-    problem: "Wholesalers were juggling sales, purchases, stock, dispatches, and client credit across separate registers and spreadsheets, so nobody had a clear view of what was owed, what was in stock, or what had shipped.",
-    solution: "We built a complete operations and accounting system covering the full trading cycle: purchases and sales orders, inventory, dispatch, invoicing, payments, and returns. A live dashboard shows receivables, payables, stock exceptions, and fulfilment workload at a glance, and every business event is recorded in an audit trail.",
-    features: ["Sales & purchase orders", "Inventory & stock alerts", "Dispatch tracking", "Invoices & payments", "Returns & corrections", "Client statements & aging", "Financial reporting", "Staff roles & audit trail"],
-    stack: ["Next.js", "Django", "PostgreSQL", "VPS hosting"],
-    outcome: "In daily use by five wholesale businesses, giving owners a real-time view of cash, credit exposure, and stock.",
-  },
-  {
-    status: "Launching Q4 2026",
-    type: "Member & operations platform",
-    title: "The operating system for a private golf club.",
-    client: "Private golf club (confidential until launch)",
-    problem: "Member services and day-to-day club operations were spread across disconnected tools.",
-    solution: "A single platform bringing the member experience and club operations into one clear system, built end to end by Rykards.",
-    features: ["Tee-time booking", "Member management", "Staff scheduling", "Integrated payments"],
-    stack: ["React", "Python FastAPI", "PostgreSQL", "AWS"],
-    outcome: "Full case study to follow at launch.",
-  },
-];
-
-// Add once the client has approved the wording, e.g.
-// { quote: "...", name: "...", role: "...", company: "..." }
-const testimonial: { quote: string; name: string; role: string; company: string } | null = null;
 
 export default function Work() {
   return <main>
     <SiteNav />
     <PageHero
-      label="/ Selected work"
+      label="/ Work & solutions"
       title={<>Software that<br /><em>runs the business.</em></>}
-      intro="We focus on operational software: the systems people rely on every day to sell, schedule, ship, and serve their customers."
+      intro="Start with a customizable Rykards software foundation, or work with us on a custom build. We shape workflows, interfaces, reports, and integrations around your operation. Each solution's current deployment status is shown below."
     />
 
-    <section className="shell">{caseStudies.map((study) => <article className="case" key={study.title}>
-      <div className="featured-top"><p className="section-label">/ {study.type}</p><span className="launch-tag"><i /> {study.status}</span></div>
+    <section className="shell" aria-label="Software foundations">{solutions.map((solution) => <article className="case" id={solution.id} key={solution.id}>
+      <div className="featured-top"><p className="section-label">/ {solution.name}</p><span className="launch-tag"><i aria-hidden="true" /> {solution.status}</span></div>
       <div className="featured-grid">
         <div>
-          <p className="project-type">{study.client}</p>
-          <h2>{study.title}</h2>
+          <h2>{solution.title}</h2>
           <dl className="case-body">
-            <div><dt>The problem</dt><dd>{study.problem}</dd></div>
-            <div><dt>What we built</dt><dd>{study.solution}</dd></div>
-            <div><dt>Outcome</dt><dd>{study.outcome}</dd></div>
+            <div><dt>The operational need</dt><dd>{solution.need}</dd></div>
+            <div><dt>The foundation</dt><dd>{solution.foundation}</dd></div>
+            <div><dt>Deployment status</dt><dd>{solution.deployment}</dd></div>
           </dl>
         </div>
         <div className="featured-details">
-          <ul>{study.features.map((feature) => <li key={feature}><span aria-hidden="true">+</span>{feature}</li>)}</ul>
-          {study.stack.length > 0 && <><p className="section-label stack-label">/ Stack</p><ul className="tag-list">{study.stack.map((tech) => <li key={tech}>{tech}</li>)}</ul></>}
+          <p className="section-label">/ Customization options</p>
+          <ul>{solution.tailoring.map((option) => <li key={option}><span aria-hidden="true">+</span>{option}</li>)}</ul>
+          <p>We agree customization scope around your requirements.</p>
         </div>
       </div>
     </article>)}</section>
 
-    {testimonial && <section className="page-band"><figure className="shell quote">
-      <blockquote>&ldquo;{testimonial.quote}&rdquo;</blockquote>
-      <figcaption>{testimonial.name} &middot; {testimonial.role}, {testimonial.company}</figcaption>
-    </figure></section>}
+    <section className="statement"><div className="shell statement-grid"><p className="section-label">/ Custom engineering</p><div><h2>Your workflow.<br /><span>Our engineering.</span></h2><p>Use an existing foundation where it fits, extend it where your operation needs more, or commission a custom system. We can design and build web and mobile software, connect your tools, and automate business processes. We agree the scope around your requirements.</p></div></div></section>
 
-    <section className="page-cta shell"><h2>Have an operation ready for better software?</h2><Link className="button button-small" href="/contact">Start a project <span aria-hidden="true">&#8599;</span></Link></section>
+    <section className="page-cta shell"><h2>Let&apos;s shape the right software for your operation.</h2><Link className="button button-small" href="/contact">Discuss your requirements <span aria-hidden="true">&#8599;</span></Link></section>
     <SiteFooter />
   </main>;
 }
