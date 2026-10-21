@@ -12,7 +12,7 @@ function Brand() {
 export function SiteNav() {
   return <nav className="nav shell" aria-label="Main navigation">
     <Link className="brand" href="/" aria-label="Rykards home"><Brand /></Link>
-    <div className="nav-links"><Link href="/#expertise">Expertise</Link><Link href="/work">Products & work</Link><Link href="/about">About</Link><Link href="/contact">Contact</Link></div>
+    <div className="nav-links"><Link href="/work">Products & work</Link><Link href="/#markets">Markets</Link><Link href="/overseas-clients">Overseas clients</Link><Link href="/about">About</Link><Link href="/contact">Contact</Link></div>
     <Link className="button button-small nav-cta" href="/contact">Start a project <span aria-hidden="true">&#8599;</span></Link>
     <MobileMenu />
   </nav>;
@@ -21,7 +21,7 @@ export function SiteNav() {
 export function SiteFooter() {
   return <footer className="footer shell">
     <Link className="brand" href="/" aria-label="Rykards home"><Brand /></Link>
-    <div className="footer-links"><Link href="/work">Work</Link><Link href="/about">About</Link><Link href="/contact">Contact</Link><Link href="/privacy">Privacy</Link></div>
+    <div className="footer-links"><Link href="/uk-software-agency-partnerships">UK agencies</Link><Link href="/uae-wholesale-software">UAE wholesalers</Link><Link href="/overseas-clients">Overseas clients</Link><Link href="/about">About</Link><Link href="/contact">Contact</Link><Link href="/privacy">Privacy</Link></div>
     <p>&copy; {new Date().getFullYear()} {legalName} &middot; Pakistan</p>
   </footer>;
 }

@@ -4,7 +4,7 @@ export const solutions = [
   {
     id: "wholesale",
     name: "Wholesale Inventory & Dispatch",
-    status: "Deployed at 5 businesses",
+    status: "Deployed with 5 wholesalers",
     title: "Wholesale trading, from purchase to payment, in one system.",
     audience: "Wholesalers managing stock, customer orders, deliveries, and credit.",
     capabilities: ["Sales & purchase orders", "Inventory & dispatch", "Invoices & payments", "Client credit & aging"],
@@ -12,7 +12,7 @@ export const solutions = [
     cta: "Request a wholesale demo",
     need: "Bring stock, orders, dispatch, invoicing, and payments into a connected wholesale workflow.",
     foundation: "A software foundation for wholesale operations, with inventory and dispatch at its core. We can tailor workflows, reporting, and integrations to the way your business trades.",
-    deployment: "Deployed at 5 businesses. The scope of a new implementation is agreed around that business's requirements.",
+    deployment: "Deployed with 5 wholesalers. The scope of a new implementation is agreed around that business's requirements.",
     tailoring: ["Order & purchasing workflows", "Stock & dispatch processes", "Invoice & payment workflows", "Reporting & integrations"],
   },
   {

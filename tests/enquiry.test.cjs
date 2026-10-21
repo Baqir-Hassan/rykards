@@ -36,6 +36,19 @@ test("accepts documented product context and trims visitor input", () => {
   assert.equal(result.data.company, "");
 });
 
+test("retains each overseas enquiry type in delivery and rejects unknown market types", async () => {
+  for (const [interest, label] of [["uk-partnership", "UK agency partnership"], ["uae-wholesale", "UAE wholesale demo"], ["overseas", "Overseas software project"]]) {
+    const post = setup(async (_url, options) => {
+      const payload = JSON.parse(options.body);
+      assert.ok(payload.subject.includes(label));
+      assert.ok(payload.text.includes(label));
+      return Response.json({ id: "accepted-market-test" });
+    });
+    assert.equal((await post(request({ ...valid, interest }))).status, 200);
+  }
+  assert.ok(validateEnquiry({ ...valid, interest: "unknown-market" }).errors.interest);
+});
+
 test("rejects missing fields, unknown products, header controls, and excessive messages", () => {
   assert.deepEqual(Object.keys(validateEnquiry(null).errors).sort(), ["email", "interest", "message", "name"]);
   for (const [field, value] of [["name", "A\r\nBcc: other@example.com"], ["email", "visitor@example.com\n" + "Bcc: bad@example.com"], ["interest", "forged-product"], ["message", "x".repeat(4001)]]) {

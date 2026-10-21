@@ -30,7 +30,24 @@ npm run start
 
 Vercel will run `npm run build` and create preview deployments for new branches and pull requests.
 
-## Enquiry form delivery
+## Overseas market pages
+
+- `/uk-software-agency-partnerships`: white-label/subcontract collaboration and custom, backend, and cloud engineering for UK agencies.
+- `/uae-wholesale-software`: existing wholesale product, deployment status, demo, and explicitly scoped UAE adaptations.
+- `/overseas-clients`: discovery through support, timezone coordination, agreed commercial terms, and project-specific data handling.
+
+The homepage and work page link these routes. Market CTAs preselect validated
+enquiry interests (`uk-partnership`, `uae-wholesale`, `overseas`) in the existing
+form and retain that context in the email. All routes include canonical and
+social metadata and are listed in the sitemap. Set `NEXT_PUBLIC_SITE_URL` to
+`https://www.rykards.com` in production to keep canonical and sitemap URLs on
+the public domain.
+
+Product deployment counts are supplied by Rykards, not independently audited.
+Five wholesale installations do not imply UAE customers. UAE currency, tax,
+invoicing, language, hosting, and integration requirements need scoping.
+
+## Enquiry form configuration
 
 The form posts to `/api/enquiry`. Messages are sent through Resend to
 `contact@rykards.com` by default. The visitor's email is set as Reply-To; the sender
