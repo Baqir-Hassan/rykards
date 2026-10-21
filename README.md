@@ -26,7 +26,7 @@ npm run start
 2. Import the repository in Vercel.
 3. Keep the detected framework as **Next.js** and the root directory as the repository root.
 4. No custom build command or output directory is required.
-5. Optionally set `NEXT_PUBLIC_SITE_URL` to the production domain, such as `https://rykards.com`. Without it, the deployment uses Vercel's project URL automatically.
+5. Set `NEXT_PUBLIC_SITE_URL` to `https://www.rykards.com`. This is also the default when the setting is absent, so metadata and sitemaps keep the public domain on Preview builds.
 
 Vercel will run `npm run build` and create preview deployments for new branches and pull requests.
 
