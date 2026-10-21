@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MobileMenu } from "@/components/mobile-menu";
 
 export const contactEmail = "contact@rykards.com";
-export const legalName = "RYKARDS (PVT) LTD";
+export const legalName = "RYKARDS (PRIVATE) LIMITED";
 
 function Brand() {
   return <><Image className="brand-mark" src="/rykards-mark.png" alt="" width={48} height={48} priority /><span className="brand-name">Rykards</span></>;
