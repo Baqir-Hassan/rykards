@@ -5,6 +5,7 @@ import { solutions } from "@/lib/solutions";
 import { getEnquiryHref } from "@/lib/enquiry";
 import { WholesaleVideo } from "@/components/wholesale-video";
 import { RestaurantVideo } from "@/components/restaurant-video";
+import { MarketLinks, OverseasIntro } from "@/components/market-sections";
 
 export const metadata: Metadata = {
   title: "Work — Rykards",
@@ -44,12 +45,13 @@ export default function Work() {
           <Link className="button button-small product-enquiry" href={getEnquiryHref(solution.id)}>{solution.cta} <span aria-hidden="true">&#8599;</span></Link>
         </div>
       </div>
-      {solution.id === "wholesale" && <WholesaleVideo />}
+      {solution.id === "wholesale" && <><p className="market-product-link"><Link className="text-link" href="/uae-wholesale-software">Exploring wholesale software for a UAE business? See the demo and implementation scope ↗</Link></p><WholesaleVideo /></>}
       {solution.id === "restaurant" && <RestaurantVideo />}
     </article>)}</section>
 
     <section className="statement"><div className="shell statement-grid"><p className="section-label">/ Custom engineering</p><div><h2>Your workflow.<br /><span>Our engineering.</span></h2><p>Use an existing foundation where it fits, extend it where your operation needs more, or commission a custom system. We can design and build web and mobile software, connect your tools, and automate business processes. We agree the scope around your requirements.</p></div></div></section>
 
+    <MarketLinks /><OverseasIntro />
     <section className="page-cta shell"><h2>Let&apos;s shape the right software for your operation.</h2><Link className="button button-small" href={getEnquiryHref("custom")}>Discuss your requirements <span aria-hidden="true">&#8599;</span></Link></section>
     <SiteFooter />
   </main>;

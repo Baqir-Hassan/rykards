@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SiteFooter, SiteNav, contactEmail } from "@/components/site-chrome";
 import { solutions } from "@/lib/solutions";
 import { getEnquiryHref } from "@/lib/enquiry";
+import { MarketLinks, OverseasIntro } from "@/components/market-sections";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -66,6 +67,8 @@ export default function Home() {
       <div className="directory-note"><p>Need something different?</p><Link href={getEnquiryHref("custom")}>Discuss a custom build <span aria-hidden="true">&#8599;</span></Link></div>
     </section>
 
+    <MarketLinks />
+    <OverseasIntro />
     <section className="statement"><div className="shell statement-grid"><p className="section-label">/ Our point of view</p><div><h2>Complex software.<br /><span>Clear thinking.</span></h2><p>Technology should move a business forward, not create another layer of friction. We bring product strategy, design, and deep engineering together so the path from idea to impact stays remarkably clear.</p></div></div></section>
 
     <section className="services shell" id="expertise">
