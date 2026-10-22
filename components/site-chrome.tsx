@@ -13,7 +13,7 @@ export function SiteNav() {
   return <nav className="nav shell" aria-label="Main navigation">
     <Link className="brand" href="/" aria-label="Rykards home"><Brand /></Link>
     <div className="nav-links"><Link href="/work">Products & work</Link><Link href="/#markets">Markets</Link><Link href="/overseas-clients">Overseas clients</Link><Link href="/about">About</Link><Link href="/contact">Contact</Link></div>
-    <Link className="button button-small nav-cta" href="/contact">Start a project <span aria-hidden="true">&#8599;</span></Link>
+    <Link className="button button-small nav-cta" href="/contact#book-meeting">Book a meeting <span aria-hidden="true">&#8599;</span></Link>
     <MobileMenu />
   </nav>;
 }

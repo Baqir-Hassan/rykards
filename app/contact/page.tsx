@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero, SiteFooter, SiteNav, contactEmail, legalName } from "@/components/site-chrome";
 import { EnquiryForm } from "@/components/enquiry-form";
+import { MeetingScheduler } from "@/components/meeting-scheduler";
 import { getEnquiryOption } from "@/lib/enquiry";
 
 export const metadata: Metadata = {
   title: "Contact — Rykards",
-  description: "Request a product demo or discuss custom software with Rykards. Send an enquiry or email contact@rykards.com. We reply within one business day.",
+  description: "Book a 20-minute Google Meet call with Rykards, request a product demo, or discuss custom software. You can also send an enquiry or email contact@rykards.com.",
   alternates: { canonical: "/contact" },
 };
 
 const steps = [
-  ["01", "You write", "Choose a product demo or tell us what you are building, who it is for, and any timeline you have in mind."],
-  ["02", "We reply", "Within one business day, with questions or a time to talk it through."],
+  ["01", "You choose", "Book a 20-minute meeting or send an enquiry about a product demo or custom build."],
+  ["02", "We talk", "Meet at your booked time to discuss what you need. For written enquiries, we reply within one business day."],
   ["03", "We propose", "A clear scope, approach, and estimate so you can make a decision with confidence."],
 ];
 
@@ -26,8 +27,12 @@ export default async function Contact({ searchParams }: { searchParams: Promise<
     <PageHero
       label="/ Contact"
       title={<>Let&apos;s talk about<br /><em>what&apos;s next.</em></>}
-      intro={<>Request a product demo or discuss a custom build. One of our three leads will reply within one business day. Prefer email? <a className="text-link" href={mailto}>{contactEmail}</a>.</>}
+      intro={<>Book a 20-minute Google Meet call to discuss a product demo or custom build, or send an enquiry and we&apos;ll reply within one business day. Prefer email? <a className="text-link" href={mailto}>{contactEmail}</a>.</>}
     />
+
+    <div className="shell contact-actions"><a className="button button-small" href="#book-meeting">Book a meeting <span aria-hidden="true">&#8599;</span></a><a className="text-link" href="#enquiry">Send an enquiry</a></div>
+
+    <MeetingScheduler />
 
     <section className="shell enquiry-section" id="enquiry" aria-labelledby="enquiry-heading">
       <div className="enquiry-intro"><p className="section-label">/ Start a conversation</p><h2 id="enquiry-heading">{selected ? selected.label : "Tell us what you need."}</h2><p>{selected?.id === "uk-partnership" ? "Tell us about your agency, the project or workstream, your technology, and your preferred collaboration model." : selected?.id === "uae-wholesale" ? "Tell us about your branches, stock, sales and dispatch process, and what you would like to see in a demo." : "Tell us a little about your business and what you'd like to see or build. We'll follow up with questions or a time to talk."}</p><p>Include your country, timezone, and preferred meeting times. <Link className="text-link" href="/overseas-clients">See how overseas projects work</Link>.</p><p>Prefer email?</p><a className="text-link enquiry-email" href={selected ? `mailto:${contactEmail}?subject=${encodeURIComponent(`${selected.label} enquiry`)}` : mailto}>{contactEmail} <span aria-hidden="true">&#8599;</span></a></div>
