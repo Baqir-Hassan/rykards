@@ -5,7 +5,7 @@ import { PageHero, SiteFooter, SiteNav, legalName } from "@/components/site-chro
 
 export const metadata: Metadata = {
   title: "About — Rykards",
-  description: "Rykards is a software engineering company founded in Pakistan in 2025, led by three hands-on engineers.",
+  description: "Rykards is a software engineering company founded in Pakistan in 2026, led by three hands-on engineers.",
   alternates: { canonical: "/about" },
 };
 
@@ -39,7 +39,7 @@ export default function About() {
     <PageHero
       label="/ About Rykards"
       title={<>The people doing<br /><em>the work.</em></>}
-      intro="Rykards was founded in Pakistan in 2025 by three engineers who wanted to build software the way it should be built: senior people, close to the problem, accountable for the result."
+      intro="Rykards was founded in Pakistan in 2026 by three engineers who wanted to build software the way it should be built: senior people, close to the problem, accountable for the result."
     />
 
     <section className="team shell" aria-labelledby="team-heading">
@@ -57,7 +57,7 @@ export default function About() {
       <div><p className="section-label">/ Company</p></div>
       <dl className="facts">
         <div><dt>Legal name</dt><dd>{legalName}</dd></div>
-        <div><dt>Founded</dt><dd>2025</dd></div>
+        <div><dt>Founded</dt><dd>2026</dd></div>
         <div><dt>Headquarters</dt><dd>Pakistan</dd></div>
         <div><dt>Works with</dt><dd>Clients locally and internationally</dd></div>
       </dl>
