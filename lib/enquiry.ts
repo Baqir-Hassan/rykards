@@ -1,6 +1,9 @@
 import { solutions } from "./solutions";
 
 export const enquiryOptions = [
+  { id: "uk-partnership", label: "UK agency partnership" },
+  { id: "uae-wholesale", label: "UAE wholesale demo" },
+  { id: "overseas", label: "Overseas software project" },
   ...solutions.map(({ id, name }) => ({ id, label: name })),
   { id: "custom", label: "Custom software engineering" },
   { id: "integrations", label: "Integrations & automation" },

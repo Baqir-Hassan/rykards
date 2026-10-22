@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero, SiteFooter, SiteNav, contactEmail, legalName } from "@/components/site-chrome";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { MeetingScheduler } from "@/components/meeting-scheduler";
@@ -34,7 +35,7 @@ export default async function Contact({ searchParams }: { searchParams: Promise<
     <MeetingScheduler />
 
     <section className="shell enquiry-section" id="enquiry" aria-labelledby="enquiry-heading">
-      <div className="enquiry-intro"><p className="section-label">/ Start a conversation</p><h2 id="enquiry-heading">{selected ? selected.label : "Tell us what you need."}</h2><p>Tell us a little about your business and what you&apos;d like to see or build. We&apos;ll follow up with questions or a time to talk.</p><p>Prefer email?</p><a className="text-link enquiry-email" href={selected ? `mailto:${contactEmail}?subject=${encodeURIComponent(`${selected.label} enquiry`)}` : mailto}>{contactEmail} <span aria-hidden="true">&#8599;</span></a></div>
+      <div className="enquiry-intro"><p className="section-label">/ Start a conversation</p><h2 id="enquiry-heading">{selected ? selected.label : "Tell us what you need."}</h2><p>{selected?.id === "uk-partnership" ? "Tell us about your agency, the project or workstream, your technology, and your preferred collaboration model." : selected?.id === "uae-wholesale" ? "Tell us about your branches, stock, sales and dispatch process, and what you would like to see in a demo." : "Tell us a little about your business and what you'd like to see or build. We'll follow up with questions or a time to talk."}</p><p>Include your country, timezone, and preferred meeting times. <Link className="text-link" href="/overseas-clients">See how overseas projects work</Link>.</p><p>Prefer email?</p><a className="text-link enquiry-email" href={selected ? `mailto:${contactEmail}?subject=${encodeURIComponent(`${selected.label} enquiry`)}` : mailto}>{contactEmail} <span aria-hidden="true">&#8599;</span></a></div>
       <EnquiryForm key={selected?.id ?? "general"} initialInterest={selected?.id} deliveryAvailable={deliveryAvailable} />
     </section>
 
