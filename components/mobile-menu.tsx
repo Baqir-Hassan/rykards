@@ -26,7 +26,7 @@ export function MobileMenu() {
     </button>
     {open && <div className="menu-panel" id="mobile-menu-panel">
       {links.map(([href, label]) => <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>)}
-      <Link className="button" href="/contact" onClick={() => setOpen(false)}>Start a project <span aria-hidden="true">&#8599;</span></Link>
+      <Link className="button" href="/contact#book-meeting" onClick={() => setOpen(false)}>Book a meeting <span aria-hidden="true">&#8599;</span></Link>
     </div>}
   </div>;
 }

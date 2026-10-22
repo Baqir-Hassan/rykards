@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-const lastUpdated = "16 October 2026";
+const lastUpdated = "22 October 2026";
 
 export default function Privacy() {
   return <main>
@@ -22,13 +22,15 @@ export default function Privacy() {
       <h2>Information we collect</h2>
       <ul>
         <li><strong>Information you send us.</strong> When you use our enquiry form or email us, we receive your name, email address, business name if provided, product or service interest, and anything you choose to include in your message. Please do not include passwords, patient records, or other sensitive information.</li>
+        <li><strong>Meeting bookings.</strong> If you book a call, Calendly processes your name, email address, chosen meeting time, and any answers you provide. We receive these details to prepare for and manage your meeting. Google Calendar and Google Meet are used for the calendar invitation and video call.</li>
         <li><strong>Technical information.</strong> Our hosting provider, Vercel, automatically processes standard request data such as IP address, browser type, and pages requested in order to deliver and secure the website.</li>
       </ul>
-      <p>We do not currently use analytics or advertising cookies. If we introduce analytics, we will update this policy before doing so and, where required, ask for your consent.</p>
+      <p>We do not add our own analytics or advertising cookies. Our embedded booking calendar loads only when you select &ldquo;Choose a time&rdquo;. Calendly may then process technical information and use cookies, with cookie choices provided by Calendly. You can also open its booking page directly. See <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer">Calendly&apos;s privacy policy</a> for details.</p>
 
       <h2>How we use it</h2>
       <ul>
         <li>To respond to your enquiry and discuss potential work together.</li>
+        <li>To schedule, prepare for, and manage meetings you book with us.</li>
         <li>To operate, maintain, and protect the website.</li>
         <li>To meet legal, accounting, or regulatory obligations.</li>
       </ul>
@@ -36,12 +38,13 @@ export default function Privacy() {
 
       <h2>Sharing</h2>
       <p>We share information only with service providers that help us run our business, such as our website host and email provider, and only as needed for them to provide that service. Enquiries submitted through the form are processed by Resend for email delivery to our team. We may also disclose information where required by law.</p>
+      <p>Meeting bookings are processed by Calendly and the connected Google Calendar and Google Meet services. Booking and meeting details are shared as needed to arrange and host your call. These providers also process information under their own privacy policies: <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer">Calendly</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a>.</p>
 
       <h2>International transfers</h2>
       <p>Our service providers may process information in countries other than your own. Where this happens, we rely on providers that apply appropriate safeguards to protect it.</p>
 
       <h2>Retention</h2>
-      <p>We keep enquiry correspondence for as long as needed to respond and, if we work together, for the duration of the relationship and any period required for legal or accounting purposes.</p>
+      <p>We keep enquiry correspondence and meeting details for as long as needed to respond, manage the meeting and any follow-up, and, if we work together, for the duration of the relationship and any period required for legal or accounting purposes.</p>
 
       <h2>Your rights</h2>
       <p>You can ask us to access, correct, delete, or stop using your personal information, or to provide a copy of it. Email <a href={`mailto:${contactEmail}`}>{contactEmail}</a> and we will respond within 30 days. Depending on where you live, you may also have the right to complain to your local data protection authority.</p>
